@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "projectname",
-    "slug": "projectname",
+    "name": "cactus",
+    "slug": "cactus",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
