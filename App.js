@@ -1,18 +1,21 @@
+import 'react-native-gesture-handler';
 import React from "react";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import Header from "./screen/components/Header";
 import Nurture from "./screen/components/Nurture";
 import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 
 import Tabs from "./navigation/Tabs";
-import Stack from "./navigation/Stack";
-export default function App() {
+// import Stack from "./navigation/Stack";
+const App = () =>  {
   return (
     
     <NavigationContainer>
     <Tabs/>
-    <Stack />
+    {/* <Stack /> */}
     </NavigationContainer>
     
    
@@ -81,3 +84,4 @@ const styles = StyleSheet.create({
     marginBottom:100,
   },
 });
+export default App;

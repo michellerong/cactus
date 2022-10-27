@@ -3,7 +3,7 @@ import React from "react";
 import {Image, View, StyleSheet, ScrollView, Pressable} from "react-native";
 import {Dimensions} from 'react-native';
 
-const Nurture = () => {
+const Nurture = ({ navigation }) => {
     return (
       <ScrollView style={styles.bgcolor}>
       <View style={styles.finishview}>
@@ -13,7 +13,7 @@ const Nurture = () => {
       {/* <Text style={styles.textstyle}>Open up App.js to start working on your app!</Text> */}
       {/* <StatusBar style="auto" /> */}
       
-      <Pressable><Image source={require('../image/rabbit.png')} style={styles.iconstyle1}  /></Pressable>
+      <Image source={require('../image/rabbit.png')} style={styles.iconstyle1} navigation={navigation} />
       <Image source={require('../image/rabbit.png')} style={styles.iconstyle1}  />
       <Image source={require('../image/rabbit.png')} style={styles.iconstyle1}  />
       
