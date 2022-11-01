@@ -1,20 +1,21 @@
 import 'react-native-gesture-handler';
 import React from "react";
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
-import Header from "./screen/components/Header";
-import Nurture from "./screen/components/Nurture";
+// import { StatusBar } from 'expo-status-bar';
+// import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+// import Header from "./screen/components/Header";
+// import Nurture from "./screen/components/Nurture";
+//  import Rootstack from "./screen/components/Rootstack";
 import { NavigationContainer } from '@react-navigation/native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+// import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 
 import Tabs from "./navigation/Tabs";
-// import Stack from "./navigation/Stack";
+import Stack from "./navigation/Stack";
 const App = () =>  {
   return (
     
     <NavigationContainer>
-    <Tabs/>
+    <Tabs />
     {/* <Stack /> */}
     </NavigationContainer>
     
@@ -47,41 +48,41 @@ const App = () =>  {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFFAF2',
-    alignItems: 'left',
-    flexDirection:'row',
-    justifyContent: 'space-between',
-    flexWrap:'wrap',
-  },
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#FFFAF2',
+//     alignItems: 'left',
+//     flexDirection:'row',
+//     justifyContent: 'space-between',
+//     flexWrap:'wrap',
+//   },
 
-  textstyle:{
-    fontSize:20,
-  },
+//   textstyle:{
+//     fontSize:20,
+//   },
 
-  iconstyle1:{
-    width:77,
-    height:77,
-  },
-  iconstyle2:{
-    width:110,
-    height:36,
-  },
-  brownlinestyle:{
-    width:390,
-    height:19,
-  },
-  bgcolor:{
-    backgroundColor: '#FFFAF2',
-  },
-  finish:{
-    width:110,
-    height:36,
-  },
-  paddingbottom:{
-    marginBottom:100,
-  },
-});
+//   iconstyle1:{
+//     width:77,
+//     height:77,
+//   },
+//   iconstyle2:{
+//     width:110,
+//     height:36,
+//   },
+//   brownlinestyle:{
+//     width:390,
+//     height:19,
+//   },
+//   bgcolor:{
+//     backgroundColor: '#FFFAF2',
+//   },
+//   finish:{
+//     width:110,
+//     height:36,
+//   },
+//   paddingbottom:{
+//     marginBottom:100,
+//   },
+// });
 export default App;

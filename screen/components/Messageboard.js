@@ -1,16 +1,19 @@
 /*仙人掌培育室按留言板切換到這個頁面 */
-import React,{Component} from "react";
-import {Button, Text, Image, View, StyleSheet, ScrollView, Pressable} from "react-native";
-export default function Messageboard ({navigation}){
+import React from "react";
+import {Text, View } from "react-native";
+
+const Messageboard = ({navigation}) => {
     
         return(
             <View>
                 <Text> Messageboard screen</Text>
                 {/* <Button
-                title="go to  Nurturehome"
-                onPress={()=> navigation.navigate('Modal')}/>
-                     */}
+                    title="go to Nurturehome"
+                    onPress={()=> this.props.navigation.navigate('CactusCommunicate')}
+                /> */}
+                    
             </View>
         );
     
 }
+export default Messageboard;

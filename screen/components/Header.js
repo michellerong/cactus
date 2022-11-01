@@ -6,21 +6,15 @@ import {Dimensions} from 'react-native';
 const windowWidth = Dimensions.get('window').width;
 
 const Header = (props) => {
-  const{title}=props;
+  const{title} = props;
   return (
     <View style={styles.headerStyle}>
     <ImageBackground  style={styles.center} source={require('../image/header.png')} >
+      <TouchableOpacity style={styles.leftButton} onPress={()=>{alert("you clicked me")}}>
+        <Image style={styles.iconStyle} source={require('../image/left_nav.png')} />
+      </TouchableOpacity>
 
-    <TouchableOpacity style={styles.leftButton} onPress={()=>{alert("you clicked me")}}>
-      <Image style={styles.iconStyle} source={require('../image/left_nav.png')} />
-    </TouchableOpacity>
-
-    <Text style={styles.textStyle}>{props.title}</Text>
-
-    {/* <TouchableOpacity style={styles.rightButton} onPress={()=>{alert("you clicked me")}}>
-    <Image style={styles.iconStyle} source={require('../image/right_nav.png')} />
-    </TouchableOpacity> */}
-
+      <Text style={styles.textStyle}>{props.title}</Text>
     </ImageBackground>
   </View>
   );
@@ -65,7 +59,6 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
   },
-
 });
 
 export default Header;
