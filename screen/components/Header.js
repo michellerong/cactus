@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   headerStyle: {
     justifyContent: "center",
     alignItems: "center",
-    height: 90,
+    height: 121,
     // Android Only
     elevation: 4
   },
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: windowWidth,
-    height: 90,
+    height: 121,
   },
 
   leftButton: {

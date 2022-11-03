@@ -5,7 +5,10 @@ import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import NurtureHome from '../screen/pages/NurtureHome';
 import CactusCommunicate from '../screen/pages/CactusCommunicate';
 import Observepage from '../screen/pages/Observepage';
-import Messageboard from '../screen/components/Messageboard';
+import Loginpage from '../screen/pages/Loginpage';
+import Registerpage from '../screen/pages/Registerpage';
+
+import Messageboardpage from '../screen/pages/Messageboardpage';
 
 const Tab = createBottomTabNavigator();
 
@@ -114,7 +117,7 @@ const Tabs = () => {
 
 
       {/* 圓形 */}
-      <Tab.Screen name="Messageboard" component={Messageboard} options={{
+      <Tab.Screen name="Messageboardpage" component={Messageboardpage} options={{
         headerShown: false,
 
         tabBarIcon: ({ focused }) => (

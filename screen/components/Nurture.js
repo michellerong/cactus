@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 const Nurture = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisible2, setModalVisible2] = useState(false);
+  const [modalVisible3, setModalVisible3] = useState(false);
   const navigation = useNavigation();
   return (
     <ScrollView style={styles.bgcolor}>
@@ -37,14 +38,14 @@ const Nurture = () => {
               <Image source={require('../image/yellowline.png')} style={styles.yellowlinestyle} />
               <Text style={styles.modalText}>成長成功仙人掌！</Text>
               <View style={styles.rabbitbackground}>
-                <Text style={styles.rabbitText}>兔一是從兔兔掌的種子成長的，是個活潑好動的孩子呢（不，他長大了）~</Text>
+                <Text style={styles.rabbitText1}>兔一是從兔兔掌的種子成長的，是個活潑好動的孩子呢（不，他長大了）~</Text>
               </View>
               <View style={styles.modalleft}>
-                <TouchableOpacity onPress={() => setModalVisible(true)}>
+                <TouchableOpacity onPress={() => {setModalVisible(false); navigation.navigate('Messageboardpage');}}>
                   <Image source={require('../image/messageboard.png')} style={styles.messageboardbutton} />
 
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => setModalVisible(true)}>
+                <TouchableOpacity onPress={() => {setModalVisible(false); navigation.navigate('Observepage');}}>
                   <Image source={require('../image/modifyData.png')} style={styles.messageboardbutton} />
 
                 </TouchableOpacity>
@@ -63,7 +64,6 @@ const Nurture = () => {
           <Image source={require('../image/rabbit.png')} style={styles.iconstyle1} />
         </TouchableOpacity>
 
-        {/* </ModalPoup> */}
 
 
         <Image source={require('../image/rabbit.png')} style={styles.iconstyle1} />
@@ -142,12 +142,55 @@ const Nurture = () => {
           onPress={() => setModalVisible2(true)}
         >
 
-          <Image source={require('../image/seed1.png')} style={styles.seed} />
+          <Image source={require('../image/seed3.png')} style={styles.seed} />
 
         </TouchableOpacity>
 
         <Image source={require('../image/seed2.png')} style={styles.seed} />
-        <Image source={require('../image/seed3.png')} style={styles.seed} />
+        
+        
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible3}
+          onRequestClose={() => {
+            Alert.alert("Modal has been closed.");
+            setModalVisible3(!modalVisible3);
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView3}>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => setModalVisible3(!modalVisible3)}
+              >
+                <Text style={styles.textStyle}>X</Text>
+              </Pressable>
+              <Text style={styles.modalText3}>仙子</Text>
+              <Image source={require('../image/bigseed3.png')} style={styles.rabbiticonstyle} />
+              <Image source={require('../image/brownline.png')} style={styles.yellowlinestyle} />
+              <Text style={styles.modalText3}>種子介紹</Text>
+              <View style={styles.seedbackground2}>
+                <Text style={styles.rabbitText2}>仙子為海膽仙人掌的種子，需要培育過‘’金鑽等級‘’的培育家才能使用</Text>
+              </View>
+              <View style={styles.modalleft}>
+
+                <Text >*等級未到不得培育該種子</Text>
+
+              </View>
+              <TouchableOpacity onPress={() => setModalVisible3(!modalVisible3)}>
+              </TouchableOpacity>
+
+            </View>
+          </View>
+
+        </Modal>
+        <TouchableOpacity
+
+          onPress={() => setModalVisible3(true)}
+        >
+        <Image source={require('../image/seed1.png')} style={styles.seed} />
+        </TouchableOpacity>
       </View>
       <View style={styles.brownlineview1}>
         <Image source={require('../image/brown_line.png')} style={styles.brownlinestyle} />
@@ -247,6 +290,21 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5
   },
+  modalView3: {
+    margin: 10,
+    backgroundColor: "#D8CCBB",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
   button: {
     borderRadius: 10,
     padding: 10,
@@ -265,27 +323,60 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   modalText: {
+    color:"#705A31",
     marginBottom: 15,
     textAlign: "center",
+    fontWeight:"bold",
+  },
+  modalText3: {
+    color:"#705A31",
+    marginBottom: 15,
+    textAlign: "center",
+    fontWeight:"bold",
   },
   rabbitText: {
-
-    textAlign: "left",
+    width:230,
+    height:44,
+    color: "#705A31",
+    
+  },
+  rabbitText1: {
+    width:230,
+    height:66,
+    color: "#705A31",
+    
+  },
+  rabbitText2: {
+    width:230,
+    height:66,
+    color: "#705A31",
+    
   },
   rabbitbackground: {
     width: 286,
     height: 100,
     justifyContent: "center",
+    alignItems:"center",
     backgroundColor: "#F8ECC1",
-    borderRadius: 7,
+    borderRadius: 15,
   },
   seedbackground: {
     width: 286,
     height: 100,
     marginTop: 8,
     justifyContent: "center",
+    alignItems:"center",
     backgroundColor: "white",
-    borderRadius: 7,
+    borderRadius: 15,
+  },
+  seedbackground2: {
+    width: 286,
+    height: 100,
+    marginTop: 8,
+    justifyContent: "center",
+    alignItems:"center",
+    backgroundColor: "#FFFAF2",
+    borderRadius: 15,
   },
   rabbiticonstyle: {
     width: 160,
